@@ -2,7 +2,7 @@
 
 let searchInput = $('#search-input');
 let results = $('#results');
-let apiUrl = 'https://api.lyrics.ovh';
+let apiUrl = 'http://api.lyrics.ovh';
 let lyricsDiv = $('#lyrics');
 lyricsDiv.hide();
 let b = 0;

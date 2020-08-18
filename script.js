@@ -81,7 +81,7 @@ function displayResults(data) {
             <p class="author lead">Album by <span>${result.album}</span></p><br>
             <audio controls id="audio1" data-able-player preload="auto" style="outline:none">
                
-            <source ref='themeSong' src="${result.audio.replace('http','https')}" type="audio/mpeg">
+            <source ref='themeSong' src="${result.audio}" type="audio/mpeg">
             </audio>
         </div>
         <div class="col-md-3 text-md-right text-center">

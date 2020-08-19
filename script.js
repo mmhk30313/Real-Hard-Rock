@@ -85,16 +85,14 @@ function createList(result,song_id){
 let child = "";
 function showList(song){
   // console.log(song.music);
-  const audio = song.music.replace("http://","");
-  // console.log(audio);
   songList.push(song);//its important...
   child += `<li id="li-${song.id}" class="single-result row align-items-center my-3 p-3">
       <div class="col-md-9">
           <h3 class="lyrics-name ${text_design[song.id]}">${song.display}</h3>
           <p class="author lead">Album by <span>${song.album}</span></p>
           <audio controls id="audio1" data-able-player preload="auto" style="outline:none">
-          <source src="${audio.replace('.mp3','.ogg')}" type="audio/ogg">     
-          <source ref='themeSong' src="${audio}" type="audio/mpeg">
+               
+          <source ref='themeSong' src="${song.music.substr(7, song.music.length)}" type="audio/mpeg">
           </audio>
       </div>
       <div class="col-md-3 text-md-right text-center">  
@@ -144,7 +142,7 @@ function testSong(song){
 }
 function displayLyrics(data,song,id){
     // console.log("yes",song);
-    // const single_lyrics = getElementById(`single-lyrics`);//sobar niche show korar jonno...
+    // const single_lyrics = getElementById(`single-lyrics`);
     const single_lyrics = getElementById(`single-lyrics-${id}`);
     single_lyrics.innerHTML = "";
     let myTemplate = '<h2 class="lyrics-title text-success mb-4">' + song + '</h2>';

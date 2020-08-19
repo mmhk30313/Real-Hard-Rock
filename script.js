@@ -51,7 +51,7 @@ function loadData(){
   // let single_lyrics_node = getElementById('single-lyrics');
   // single_lyrics_node.innerHTML = "";
   results.innerHTML = "";
-  console.log(`${apiUrl}/suggest/${searchInput.value}`);
+  // console.log(`${apiUrl}/suggest/${searchInput.value}`);
   fetch(`${apiUrl}/suggest/${searchInput.value}`)
   .then(response => response.json())
   .then(DATA => {
@@ -84,9 +84,9 @@ function createList(result,song_id){
 }
 let child = "";
 function showList(song){
-  console.log(song.music);
+  // console.log(song.music);
   const audio = song.music.replace("http://","");
-  console.log(audio);
+  // console.log(audio);
   songList.push(song);//its important...
   child += `<li id="li-${song.id}" class="single-result row align-items-center my-3 p-3">
       <div class="col-md-9">
@@ -127,7 +127,7 @@ function findLyrics(id){
   }
 }
 function testSong(song){
-    console.log(song);
+    // console.log(song);
     fetch(`${apiUrl}/v1/${song.artist}/${song.title}`)
     .then(res => res.json())
     .then(data => {

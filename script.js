@@ -91,7 +91,8 @@ function showList(song){
           <h3 class="lyrics-name ${text_design[song.id]}">${song.display}</h3>
           <p class="author lead">Album by <span>${song.album}</span></p>
           <audio controls id="audio1" data-able-player preload="auto" style="outline:none">
-               <source ref='themeSong' src="${song.music}" type="audio/mp.3">
+          <source src="${song.music.replace('.mp3','.ogg')}" type="audio/ogg">     
+          <source ref='themeSong' src="${song.music}" type="audio/mpeg">
           </audio>
       </div>
       <div class="col-md-3 text-md-right text-center">  
@@ -141,6 +142,7 @@ function testSong(song){
 }
 function displayLyrics(data,song,id){
     // console.log("yes",song);
+    // const single_lyrics = getElementById(`single-lyrics`);//sobar niche show korar jonno...
     const single_lyrics = getElementById(`single-lyrics-${id}`);
     single_lyrics.innerHTML = "";
     let myTemplate = '<h2 class="lyrics-title text-success mb-4">' + song + '</h2>';
